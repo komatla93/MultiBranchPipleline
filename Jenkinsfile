@@ -1,4 +1,4 @@
-node(master){
+node('master'){
     stage('Contdownload'){
         git 'https://github.com/komatla93/CICDPractice.git'
     }
