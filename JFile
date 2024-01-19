@@ -1,0 +1,11 @@
+node{
+    stage('Contdownload'){
+        git 'https://github.com/komatla93/CICDPractice.git'
+    }
+    stage('Contbuild'){
+        sh 'mvn package'
+    }
+    stage('Contdeployment'){
+        sh 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.11.138:/var/lib/tomcat9/webapps/test01.war'
+    }
+}
