@@ -1,0 +1,8 @@
+node{
+    stage('Contdownload'){
+        git 'https://github.com/komatla93/CICDPractice.git'
+    }
+    stage('Contbuild'){
+        sh 'mvn package'
+    }
+}
